@@ -29,8 +29,8 @@ print()
 temp2 = [x * 3 for x in generator_ex1()] # for문으로 작성시 yield 옆에있는 코드가 맨마지막에 출력됌
 temp3 = (x * 3 for x in generator_ex1()) # for문으로 작성시 yield 옆에있는 코드가 그자리에 맞게 출력됌
 
-# print(temp2)
-# print(temp3)
+print(temp2)
+print(temp3)
 
 for i in temp2:
     print(i)
@@ -80,29 +80,31 @@ gen4 = itertools.accumulate([x for x in range(1, 101)])
 for v in gen4:
     print(v)
 
-
+print()
 # 연결1
 gen5 = itertools.chain('ABCDE', range(1,20,2))
 
 print(list(gen5))
 
+print()
 # 연결2
 gen6 = itertools.chain(enumerate('ABCDE'))
 
 print(list(gen6))
 
+print()
 # 개별
 gen7 = itertools.product('ABCDE') # 튜플로 분리
 
 print(list(gen7))
 
+print()
 # 연산(경우의 수)
-
 gen8 = itertools.product('ABCDE', repeat=2) # 튜플로 분리
 
 print(list(gen8))
 
-
+print()
 # 그룹화
 gen9 = itertools.groupby('AAACBBCCCDDEEE')
 '''
@@ -123,6 +125,5 @@ E  :  ['E', 'E', 'E']
 '''
 
 # print(list(gen9))
-
 for chr, group in gen9:
     print(chr, ' : ', list(group))
